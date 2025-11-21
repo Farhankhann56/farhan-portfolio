@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farhan Khan - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Farhan Khan</div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects/Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I’m <span class="highlight">Farhan Khan</span></h1>
+            <h2 class="typing-text">Crafting Digital Excellence</h2>
+            <p>A visionary web developer building <span class="highlight">intuitive, responsive solutions</span> that elevate user experiences. Let’s turn your ideas into reality with cutting-edge design and code.</p>
+            <button class="hire-btn">Let’s Collaborate</button>
+        </div>
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-image">
+            <img src="images/WhatsApp Image 2025-01-24 at 4.00.33 AM.jpeg" alt="Farhan Khan">
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="about-card">
+                <div class="about-text">
+                    <h3>Who I Am</h3>
+                    <p>I’m Farhan Khan, a <span class="highlight">web development enthusiast</span> with a knack for turning ideas into interactive digital experiences. My journey began with a curiosity for code and design, evolving into a passion for creating <span class="highlight">user-focused solutions</span>.</p>
+                </div>
+                <div class="about-text">
+                    <h3>My Expertise</h3>
+                    <p>With hands-on experience from internships at DeveloperHub Corporation and CodeAlpha, I specialize in <span class="highlight">HTML, CSS, JavaScript, and Node.js</span>. I love crafting responsive layouts and refining UI/UX to perfection.</p>
+                </div>
+                <div class="about-text">
+                    <h3>My Vision</h3>
+                    <p>I aim to build websites that not only look stunning but also <span class="highlight">solve real problems</span>. Whether it’s a sleek portfolio or a complex platform, I bring creativity and precision to every project.</p>
+                </div>
+            </div>
+            <div class="about-image orbit-container">
+                <img src="images/WhatsApp Image 2025-01-24 at 4.00.33 AM.jpeg" alt="Farhan Khan" class="orbit-image">
+                <div class="orbit-ring"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid" data-aos="fade-up" data-aos-duration="1000">
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <div class="progress-circle" data-progress="90">
+                    <span class="progress-value">90%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <div class="progress-circle" data-progress="85">
+                    <span class="progress-value">85%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <div class="progress-circle" data-progress="80">
+                    <span class="progress-value">80%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Node.js</h3>
+                <div class="progress-circle" data-progress="70">
+                    <span class="progress-value">70%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>UI/UX Design</h3>
+                <div class="progress-circle" data-progress="75">
+                    <span class="progress-value">75%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+   <section id="experience" class="experience">
+    <h2>Internships & Experience</h2>
+    <div class="timeline" data-aos="fade-up" data-aos-duration="1000">
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <img src="images/WhatsApp Image 2025-11-21 at 5.28.04 PM.jpeg" alt="Onsite Web Developer Internship" class="company-logo">
+                <h3>Onsite Web Developer Internship</h3>
+                <p>Web Developer Intern (Onsite - October 2025 - Present)</p>
+                <p>Developing full-stack web applications using modern technologies, contributing to team projects, and gaining hands-on experience in an onsite environment.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <img src="images/develpor hub.jpeg" alt="DeveloperHub Corporation" class="company-logo">
+                <h3>DeveloperHub Corporation</h3>
+                <p>Front-end Development Intern (1 Month - Virtual)</p>
+                <p>Collaborated on responsive web interfaces using HTML, CSS, and JavaScript, optimizing user-facing features for cross-browser compatibility.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <img src="images/code alpha.jpeg" alt="CodeAlpha" class="company-logo">
+                <h3>CodeAlpha</h3>
+                <p>Front-end Development Intern (1 Month - Virtual)</p>
+                <p>Designed and refined front-end components for client projects, focusing on usability and aesthetic appeal, with senior developer guidance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects & Certifications Section -->
+    <section id="projects" class="projects">
+        <h2>Projects & Certifications</h2>
+        <div class="projects-grid" data-aos="fade-up" data-aos-duration="1000">
+            <div class="project-card" onclick="openModal('project1')">
+                <h3>Portfolio Website</h3>
+                <p>Responsive personal portfolio with modern UI/UX.</p>
+                <img src="images/maxresdefault (1).jpg" alt="Portfolio Website">
+            </div>
+            <div class="project-card" onclick="openModal('project2')">
+                <h3>E-commerce Platform</h3>
+                <p>Frontend e-commerce site with responsive design.</p>
+                <img src="images/ecommerce.avif" alt="E-commerce Platform">
+            </div>
+            <div class="project-card" onclick="openModal('project3')">
+                <h3>Weather Dashboard</h3>
+                <p>Dynamic weather app with API integration.</p>
+                <img src="images/weather.avif" alt="Weather Dashboard">
+            </div>
+        </div>
+        <div class="certifications" data-aos="fade-up" data-aos-duration="1000">
+            <h3>Certifications</h3>
+            <div class="certification-grid">
+                <div class="cert-badge">
+                    <img src="images/Screenshot 2025-02-24 032554.png" alt="WordPress Web Development Certificate" class="cert-image">
+                    <p>WordPress Web Development</p>
+                </div>
+                <div class="cert-badge">
+                    <img src="images/Screenshot 2025-02-24 032456.png" alt="Social Media Marketing Certificate" class="cert-image">
+                    <p>Social Media Marketing</p>
+                </div>
+                <div class="cert-badge">
+                    <img src="images/Screenshot 2025-02-24 032456.png" alt="E-commerce Certificate" class="cert-image">
+                    <p>E-commerce</p>
+                </div>
+                <div class="cert-badge">
+                    <img src="images/Screenshot 2025-02-24 032554.png" alt="JavaScript Essentials Certificate" class="cert-image">
+                    <p>JavaScript Essentials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" data-aos="fade-up" data-aos-duration="1000">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links" data-aos="fade-up" data-aos-duration="1000">
+            <a href="https://linkedin.com/in/farhan-khan-00621234a" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Farhankhann56" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:farhankhan9909991@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- Modal for Projects -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <a id="modal-link" href="#" target="_blank">View Live Demo</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" data-aos="fade-up" data-aos-duration="1000">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Me</h3>
+                <p>Creative and detail-oriented Web Developer passionate about crafting user-friendly, responsive websites with modern technologies.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:farhankhan9909991@gmail.com">farhankhan9909991@gmail.com</a></p>
+                <p>Phone: +92-3439199099</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/farhan-khan-00621234a" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Farhankhann56" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="mailto:farhankhan9909991@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="footer-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Farhan Khan. All Rights Reserved.</p>
+            <div class="scroll-to-top" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
