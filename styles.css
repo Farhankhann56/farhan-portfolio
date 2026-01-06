@@ -12,6 +12,7 @@ body {
     overflow-x: hidden;
 }
 
+
 body.dark {
     background: #1a1a2e;
     color: #fff;
@@ -190,6 +191,7 @@ body.dark .hero p {
     padding: 1.2rem 2.5rem;
     font-size: 1.2rem;
     background: #007bff;
+    margin-top: 10px;
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -203,26 +205,92 @@ body.dark .hero p {
     transform: translateY(-5px) scale(1.05);
 }
 
-.hero-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
-    transition: transform 0.3s ease;
-    cursor: pointer;
+
+/****************************************/
+/* allow overflow for new layout */
+.hero-image{
+   position: relative;
+    width: fit-content;     
+    margin: 0 auto;        
+    display: block;
 }
 
-.hero-image:hover {
-    transform: scale(1.1);
+.hero-image-inner{
+    position: relative;
+    width: 400px;
+    height: 500px;
 }
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.hero-image .shape{
+    position: absolute;
+    color: white;         
+    opacity: 0.6;            
+    pointer-events: none;
+    z-index: 5;
 }
 
+.hero-image .zigzag{
+    top: -50px;
+    left: -60px;
+    font-size: 60px;  
+        
+}
+
+.hero-image .circles{
+    top: -60px;
+    right: -55px;
+    font-size: 30px;        
+}
+
+.hero-image .triangle{
+    bottom: -60px;
+    left: -55px;
+    font-size: 50px;       
+}
+
+.hero-image .plus{
+    bottom: -55px;
+    right: -55px;
+    font-size: 50px;       
+}
+
+
+.hero-image .rotated-frame{
+      position: absolute;
+      width: 430px;
+      height: 530px;
+      transform: rotate(-12deg);
+      border-radius: 35px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+}
+
+.hero-image .rotated-frame::after{
+     content: '';
+      position: absolute;
+      inset: 12px;
+      background: #0f172a;
+      border-radius: 30px;
+      border: 5px solid white;
+}
+
+
+.hero-image .card-image{
+     position: relative;
+      border: 1px solid rgb(82, 65, 65);
+      width: 420px;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 28px;
+      z-index: 2;
+      margin: 12px auto;
+      margin-right: 100px;
+      box-shadow: 0 15px 30px rgba(241, 241, 241, 0.4);
+}
+
+/********************************/
 #particle-canvas {
     position: absolute;
     top: 0;
@@ -465,7 +533,10 @@ body.dark .progress-value {
     color: #070606;
 }
 
-/* Experience Section */
+/* ===============================
+   Experience Section
+================================ */
+
 .experience {
     padding: 5rem 10%;
     min-height: 100vh;
@@ -486,47 +557,90 @@ body.dark .experience {
 }
 
 body.dark .experience h2 {
-    color: #fff;
+    color: #ffffff;
 }
+
+/* ===============================
+   Timeline → GRID (Cards)
+================================ */
 
 .timeline {
     width: 100%;
     max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 2rem;
 }
 
 .timeline-item {
-    margin: 2rem 0;
+    margin: 0; /* grid controls spacing */
 }
 
+/* ===============================
+   Experience Card
+================================ */
+
 .timeline-card {
-    background: linear-gradient(135deg, #fff, #f0f4ff);
+    background: linear-gradient(135deg, #ffffff, #f0f4ff);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.35s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    text-align: center;
+    min-height: 260px;
 }
 
 body.dark .timeline-card {
     background: linear-gradient(135deg, #2d2d2d, #3a3a3a);
 }
 
+/* Hover effect */
 .timeline-card:hover {
-    transform: translateX(10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.4);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 123, 255, 0.35);
 }
 
+/* ===============================
+   Company Logo
+================================ */
+
 .company-logo {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
 }
 
 .timeline-card:hover .company-logo {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* ===============================
+   Text Styling (optional but clean)
+================================ */
+
+.timeline-card h3 {
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+body.dark .timeline-card h3 {
+    color: #ffffff;
+}
+
+.timeline-card span,
+.timeline-card p {
+    color: #555;
+    font-size: 0.90rem;
+}
+
+body.dark .timeline-card span,
+body.dark .timeline-card p {
+    color: #cccccc;
 }
 
 /* Projects Section */
@@ -998,13 +1112,23 @@ body.dark .close {
         font-size: 2rem;
     }
 
-    .hero-image {
-        width: 250px;
-        height: 250px;
+    .hero-image .rotated-frame {
+        width: 320px;
+        height: 390px;
+        display: none;
+    }
+
+    .hero-image .card-image {
+        width: 310px;
+        height: 380px;
+     
     }
 
     .about, .skills, .experience, .projects, .contact {
-        padding: 4rem 8%;
+        padding: 4rem 6%;
+    }
+      .timeline {
+        grid-template-columns: 1fr;
     }
 
     .skills-grid {
@@ -1019,7 +1143,7 @@ body.dark .close {
 @media (max-width: 1000px) {
     .navbar {
         padding: 0.8rem 3%;
-        position: relative; /* For absolute positioning of children */
+        position: relative;
     }
 
     .menu-toggle {
@@ -1030,16 +1154,16 @@ body.dark .close {
         transform: translateY(-50%);
         margin: 0;
         z-index: 1001;
-        font-size: 1.6rem; /* Slightly smaller for better fit */
+        font-size: 1.6rem;
     }
 
     .logo {
-        margin: 0; /* Keep logo flush left */
+        margin: 0;
     }
 
     .dark-mode-toggle {
         position: absolute;
-        right: 3.5rem; /* Positioned to the left of menu-toggle (1rem + ~1.6rem icon width + 0.5rem gap) */
+        right: 3.5rem;
         top: 50%;
         transform: translateY(-50%);
         margin: 0;
@@ -1049,7 +1173,7 @@ body.dark .close {
     }
 
     .dark-mode-toggle span {
-        display: none; /* Hide text in mobile, keep icon only */
+        display: none;
     }
 
     .nav-links {
@@ -1103,16 +1227,23 @@ body.dark .close {
         margin: 0 auto;
     }
 
-    .hero-image {
-        width: 200px;
-        height: 200px;
-        margin-top: 2rem;
+    .hero-image .rotated-frame {
+        width: 290px;
+        height: 350px;
+          display: none;
+    }
+
+    .hero-image .card-image {
+        width: 280px;
+        height: 340px;
     }
 
     .about, .skills, .experience, .projects, .contact {
         padding: 3rem 5%;
     }
-
+     .timeline {
+        grid-template-columns: 1fr;
+    }
     .about h2, .skills h2, .experience h2, .projects h2, .contact h2 {
         font-size: 2rem;
     }
@@ -1179,7 +1310,6 @@ body.dark .close {
 
     .menu-toggle {
         display: block;
-        margin-right: 10px auto ;
     }
 
     .nav-links {
@@ -1195,7 +1325,7 @@ body.dark .close {
     }
 
     .nav-links.active {
-        display: flex; /* Explicitly show when active */
+        display: flex;
     }
 
     body.dark .nav-links {
@@ -1211,102 +1341,26 @@ body.dark .close {
         margin-left: 1rem;
         font-size: 0.9rem;
     }
-
-    .hero {
-        flex-direction: column;
-        padding: 4rem 5%;
-        text-align: center;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .hero-image {
-        width: 200px;
-        height: 200px;
-        margin-top: 2rem;
-    }
-
-    .about, .skills, .experience, .projects, .contact {
-        padding: 3rem 5%;
-    }
-
-    .about h2, .skills h2, .experience h2, .projects h2, .contact h2 {
-        font-size: 2rem;
-    }
-
-    .about-container {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 1.5rem;
-    }
-
-    .orbit-container {
-        width: 200px;
-        height: 200px;
-    }
-
-    .orbit-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .orbit-ring {
-        width: 220px;
-        height: 220px;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .progress-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .timeline-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
-    }
-
-    .projects-grid {
+    
+      .timeline {
         grid-template-columns: 1fr;
     }
-
-    .project-card img {
-        height: 180px;
+    /* Perfect centering - No manual margins needed */
+    .hero-image .rotated-frame {
+        width: 290px;
+        height: 350px;
+          display: none;
     }
 
-    .contact form {
-        padding: 1.5rem;
-        max-width: 100%;
+    .hero-image .card-image {
+        width: 280px;
+        height: 340px;
     }
-    
+
     #newsletter-form {
-        flex-direction: column; /* Change to column */
-        gap: 0.8rem; /* Reduce gap for vertical stacking */
-        align-items: stretch; /* Make input/button full width */
-    }
-
-    .footer {
-        padding: 3rem 5%;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: stretch;
     }
 }
 
@@ -1325,7 +1379,7 @@ body.dark .close {
     }
 
     .dark-mode-toggle {
-        right: 2.8rem; /* Adjusted for smaller screen (0.8rem + ~1.5rem icon + 0.3rem gap) */
+        right: 2.8rem;
         font-size: 0.8rem;
         gap: 0.3rem;
     }
@@ -1355,9 +1409,15 @@ body.dark .close {
         font-size: 1rem;
     }
 
-    .hero-image {
-        width: 180px;
-        height: 180px;
+    .hero-image .rotated-frame {
+        width: 240px;
+        height: 290px;
+          display: none;
+    }
+
+    .hero-image .card-image {
+        width: 230px;
+        height: 280px;
     }
 
     .about, .skills, .experience, .projects, .contact {
@@ -1391,13 +1451,14 @@ body.dark .close {
     .project-card img {
         height: 150px;
     }
+
     #newsletter-form {
-        gap: 0.5rem; /* Even smaller gap */
+        gap: 0.5rem;
     }
 
     #newsletter-form input,
     #newsletter-form button {
-        padding: 0.7rem; /* Slightly less padding for mobile */
+        padding: 0.7rem;
         font-size: 0.95rem;
     }
 
@@ -1425,7 +1486,7 @@ body.dark .close {
     }
 
     .dark-mode-toggle {
-        right: 2rem; /* Adjusted for very small screen (0.5rem + ~1.3rem icon + 0.2rem gap) */
+        right: 2rem;
         font-size: 0.7rem;
         gap: 0.2rem;
     }
@@ -1450,9 +1511,15 @@ body.dark .close {
         font-size: 0.9rem;
     }
 
-    .hero-image {
-        width: 150px;
-        height: 150px;
+    .hero-image .rotated-frame {
+        width: 200px;
+        height: 240px;
+          display: none;
+    }
+
+    .hero-image .card-image {
+        width: 190px;
+        height: 230px;
     }
 
     .about h2, .skills h2, .experience h2, .projects h2, .contact h2 {
